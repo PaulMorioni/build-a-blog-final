@@ -5,11 +5,10 @@
 <form method='POST'>
     <label>
         New Blog Title
-        <input type="text" name='blog_title' />
-    </label>
+        <input type="text" name="blog_title" value="{{post_name}}">    </label>
     <label>
         Body
-        <input type="text" name='blog_body' />
+        <textarea name="blog_body">{{post_body}}</textarea>
     </label>
     <input type='submit' value='Add Post' />
 </form>

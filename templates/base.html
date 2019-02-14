@@ -5,6 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <style>
+        .error {
+            color:red;
+        }
+    </style>
+    
     {% if title %}
         <title> Blog - {{ title }}</title>
     {% else %}
@@ -14,6 +20,14 @@
 </head>
 <a href="/">Home</a>
 <a href="/new_entry">New Post</a>
+
+{% with messages = get_flashed_messages(with_categories=True) %}
+{% for message in messages %}
+<ul class=error>
+    <li>{{message}}</li>
+    {% endfor %}
+</ul>
+{% endwith %}  
 
     {%block content%}
     {%endblock%}
